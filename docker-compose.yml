@@ -37,7 +37,10 @@ services:
     volumes:
       - ./docker/node:/var/www/html/
       - ./public_html:/var/www/html/wp
+      - ./ssg:/var/www/html/ssg
     working_dir: /var/www/html/
+    ports:
+      - 8000:8000
     depends_on:
       - wp
     tty: true
